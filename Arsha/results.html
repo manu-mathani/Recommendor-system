@@ -1,80 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Arsha Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Arsha
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="./assets/css/results.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <style>
+        .results-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .result-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .result-item h3 {
+            margin: 0;
+        }
+        .result-item p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
-    
-          <a href="index.html" class="logo d-flex align-items-center me-auto">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1 class="sitename">Smart Career Guidance</h1>
-          </a>
-    
-          <nav id="navmenu" class="navmenu">
-            <ul>
-              <li><a href="#hero" class="active">Home</a></li>
-              <li><a href="./Results.html">Result</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-          </nav>
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <h1 class="sitename">SMART</h1>
+            </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="./Results.html">Result</a></li>
+                    <li><a href="./sign-up.html">Sign-up</a></li>
+                    <li><a href="./login.html">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
         </div>
-      </header>
+    </header>
 
-    <main>
-        <button class="accordion">Section 1</button>
-        <div class="panel">
-            <p>Lorem ipsum...</p>
-        </div>
+    <div class="results-container">
+        <h1>Recommended Courses</h1>
+        <div id="results"></div>
+    </div>
 
-        <button class="accordion">Section 2</button>
-        <div class="panel">
-            <p>Lorem ipsum...</p>
-        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Assuming you have the response data available
+            const response = [
+                {
+                    course: "Bachelor of Business Administration",
+                    probability: 0.92
+                },
+                {
+                    course: "Bachelor of Development Studies",
+                    probability: 0.002
+                },
+                {
+                    course: "Bachelor of Supply Chain Management",
+                    probability: 0.01
+                }
+            ];
 
-        <button class="accordion">Section 3</button>
-        <div class="panel">
-            <p>Lorem ipsum...</p>
-        </div>
-    </main>
-    
-    <script src="./assets/js/result.js"></script>
+            // Get the results container
+            const resultsContainer = document.getElementById('results');
 
-    
+            // Clear any existing content
+            resultsContainer.innerHTML = '';
+
+            // Iterate over the response and create HTML elements
+            response.forEach(item => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'result-item';
+
+                const courseTitle = document.createElement('h3');
+                courseTitle.textContent = item.course;
+
+                const probabilityText = document.createElement('p');
+                probabilityText.textContent = `Probability: ${(item.probability * 100).toFixed(2)}%`;
+
+                resultItem.appendChild(courseTitle);
+                resultItem.appendChild(probabilityText);
+
+                resultsContainer.appendChild(resultItem);
+            });
+        });
+    </script>
 </body>
 </html>

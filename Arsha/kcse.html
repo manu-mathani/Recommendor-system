@@ -12,25 +12,24 @@
 <body>
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
-    
-          <a href="index.html" class="logo d-flex align-items-center me-auto">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1 class="sitename">SMART</h1>
-          </a>
-    
-          <nav id="navmenu" class="navmenu">
-            <ul>
-              <li><a href="#hero" class="active">Home</a></li>
-              <li><a href="./Results.html">Result</a></li>
-              <li><a href="./sign-up.html">Sign-up</a></li>
-              <li><a href="./login.html">Contact</a></li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-          </nav>
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1 class="sitename">SMART</h1>
+            </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="./Results.html">Result</a></li>
+                    <li><a href="./sign-up.html">Sign-up</a></li>
+                    <li><a href="./login.html">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
         </div>
-      </header>
-    <form action="kcse.html" style="border:1px solid #ccc">
+    </header>
+
+    <form action="https://your-server-endpoint.example.com/submit" method="post" style="border:1px solid #ccc">
         <div class="container">
             <h1>KCSE Result</h1>
             <p>Please fill in the details to get recommendation.</p>
@@ -60,11 +59,9 @@
             <label for="riasecTotal"><b>RIASEC Total</b></label>
             <input type="text" id="riasecTotal" placeholder="Enter RIASEC Total" name="riasecTotal" required>
 
-    
-
             <div class="clearfix">
                 <button type="button" class="cancelbtn" onclick="window.location.href='index.html';">Cancel</button>
-                <button type="submit" class="signupbtn">Sign Up</button>
+                <button type="submit" class="signupbtn">Submit</button>
             </div>
         </div>
     </form>
