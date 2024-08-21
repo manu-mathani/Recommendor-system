@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Form</title>
+    <link rel="stylesheet" href="./assets/css/kcse.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <style>
+    </style>
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+    
+          <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <h1 class="sitename">SMART</h1>
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="#hero" class="active">Home</a></li>
+              <li><a href="./Results.html">Result</a></li>
+              <li><a href="./sign-up.html">Sign-up</a></li>
+              <li><a href="./login.html">Contact</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+        </div>
+      </header>
+    <form action="kcse.html" style="border:1px solid #ccc">
+        <div class="container">
+            <h1>KCSE Result</h1>
+            <p>Please fill in the details to get recommendation.</p>
+            <hr>
+
+            <label for="math"><b>Mathematics</b></label>
+            <input type="text" placeholder="Enter Mathematics Grade" name="math" required>
+
+            <label for="english"><b>English</b></label>
+            <input type="text" placeholder="Enter English Grade" name="english" required>
+
+            <label for="chemistry"><b>Chemistry</b></label>
+            <input type="text" placeholder="Enter Chemistry Grade" name="chemistry" required>
+
+            <label for="physics"><b>Physics</b></label>
+            <input type="text" placeholder="Enter Physics Grade" name="physics" required>
+
+            <label for="biology"><b>Biology</b></label>
+            <input type="text" placeholder="Enter Biology Grade" name="biology" required>
+
+            <label for="history"><b>History</b></label>
+            <input type="text" placeholder="Enter History Grade" name="history" required>
+
+            <label for="geography"><b>Geography</b></label>
+            <input type="text" placeholder="Enter Geography Grade" name="geography" required>
+
+            <label for="riasecTotal"><b>RIASEC Total</b></label>
+            <input type="text" id="riasecTotal" placeholder="Enter RIASEC Total" name="riasecTotal" required>
+
+    
+
+            <div class="clearfix">
+                <button type="button" class="cancelbtn" onclick="window.location.href='index.html';">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        window.onload = function() {
+            // Retrieve the RIASEC total score from localStorage
+            const riasecTotalScore = localStorage.getItem('riasecTotalScore');
+
+            // Display the RIASEC total score in the input field
+            if (riasecTotalScore) {
+                document.getElementById('riasecTotal').value = riasecTotalScore;
+            }
+        }
+    </script>
+</body>
+</html>
